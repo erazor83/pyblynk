@@ -1,9 +1,9 @@
 # pyblynk - Blynk helpers for Python
 
 
-So this is just another Python implementation of the Blynk service http://blynk.cc.
+So this is just another Python implementation of the Blynk service ( http://blynk.cc ).
 
-I plan to also add server functionalty to implement a private cloud service and one does not depend on cloud.blynk.cc .
+I plan to also add server functionalty to implement a private cloud service to be indedepent from cloud.blynk.cc .
 
 ## example
 There is a simple example which connects to the blynk service and prints out detailed frame info:
