@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+	client helpers
+"""
+__author__	= """Alexander Krause <alexander.krause@ed-solutions.de>"""
+__date__ 		= "2016-01-11"
+__version__	= "0.2.0"
+__credits__	= """Copyright e-design, Alexander Krause <alexander.krause@ed-solutions.de>"""
+__license__	= "MIT"
+
 import time
 import socket
 
@@ -59,7 +69,7 @@ class TCP_Client():
 					#print('rx-timeout')
 					return ''
 				except Exception as e:
-					#print('rx exception',str(e))
+					print('rx exception',str(e))
 					self.connected=False
 					return ''
 				if not r:
@@ -68,7 +78,12 @@ class TCP_Client():
 				d.append(r)
 				#print(d)
 				l = l + len(r)
-			return ''.join(d)
+				
+			ret=bytes()
+			for cluster in d:
+				ret=ret+cluster
+			return ret
+		
 	def rxFrame(self):
 		response=self.rx(common.ProtocolHeader.size)
 		if response:
@@ -104,7 +119,7 @@ class TCP_Client():
 			return False
 		
 		self.txFrame(common.MSG_LOGIN,len(token))
-		self.tx(token)
+		self.tx(str(token).encode('ascii'))
 		response=self.rxFrame()
 		if response:
 			msg_type, msg_id, msg_status = response
