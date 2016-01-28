@@ -103,7 +103,7 @@ class TCP_Client():
 				msg_type,
 				self.newMessageID(),
 				len(data)
-			)+data
+			)+data.encode('ascii')
 		)
 	
 	def newMessageID(self):
