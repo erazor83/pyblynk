@@ -13,7 +13,7 @@ import socket
 
 from . import common
 
-class TCP_Client():
+class TCP_Client(object):
 	_Server=None
 	_Port=None
 	_Socket=None
@@ -103,7 +103,7 @@ class TCP_Client():
 				msg_type,
 				self.newMessageID(),
 				len(data)
-			)+data
+			)+data.encode('ascii')
 		)
 	
 	def newMessageID(self):

@@ -10,7 +10,7 @@ __license__	= "MIT"
 
 from . import common
 
-class Hardware():
+class Hardware(object):
 	_Media=None
 	
 	def __init__(self,media):
