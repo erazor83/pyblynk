@@ -12,7 +12,7 @@ def createFromConf(conf,storage=None):
 	if conf['type']=='tcp':
 		return TCP_Server(conf['conf'],storage)
 	
-class Server():
+class Server(object):
 	conf=None
 	Storage=None
 	Connections=None
