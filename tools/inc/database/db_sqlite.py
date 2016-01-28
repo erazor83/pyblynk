@@ -20,6 +20,6 @@ def dict_factory(cursor, row):
 		d[col[0]] = row[idx]
 	return d
 
-class Database():
+class Database(object):
 	def __init__(self,conf):
 		pass
