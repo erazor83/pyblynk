@@ -13,7 +13,7 @@ import socket
 
 from . import common
 
-class TCP_Client():
+class TCP_Client(object):
 	_Server=None
 	_Port=None
 	_Socket=None
