@@ -3,8 +3,8 @@
 	client helpers
 """
 __author__	= """Alexander Krause <alexander.krause@ed-solutions.de>"""
-__date__ 		= "2016-01-11"
-__version__	= "0.2.0"
+__date__ 		= "2016-07-05"
+__version__	= "0.2.1"
 __credits__	= """Copyright e-design, Alexander Krause <alexander.krause@ed-solutions.de>"""
 __license__	= "MIT"
 
@@ -24,7 +24,7 @@ class TCP_Client(object):
 	t_Ping=5
 	connected=False
 	
-	def __init__(self,server='cloud.blynk.cc',port=8442):
+	def __init__(self,server='blynk-cloud.com',port=8442):
 		self._Server=server
 		self._Port=port
 		
